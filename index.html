@@ -3,24 +3,47 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-      <title>HowTo: Mini-Beispiel "Leaflet Karte mit Marker"</title>
-      <!-- leaflet.css und leaflet.js von externer Quelle einbinden -->
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
-      <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+      <title>KZL Planner</title>
+      <link rel="stylesheet" href="./leaflet/leaflet.
+
+.drawtools {
+    margin: auto;
+    width: 50%;
+    border: 1px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.tools {
+    /*border: 5px;*/
+    max-width: 10%;
+  css" />
+      <link rel="stylesheet" href="./style/style.css"/>
+      <script src="./leaflet/leaflet.js"></script>
    </head>
    <body>
+      <div class="drawtools"> 
+         <button class="tools" id="draw">Draw</button>
+         <button class="tools" id="erase">Erase</button>
+      </div>
       <div id='meineKarte' style='height: 800px; width: 100%;'></div>
       <!-- OSM-Basiskarte einfügen und zentrieren -->
       <script type='text/javascript'>
-         var Karte = L.map('meineKarte').setView([51.75840, 6.39612], 15);
+         var Karte = L.map('meineKarte').setView([52.70806, 9.25532], 16);
+         //console.log("Z:",z,"X:",x,"Y:",y);
          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
          'attribution':  'Kartendaten &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Mitwirkende',
          'useCache': true
          }).addTo(Karte);
       </script>
-      <!-- Marker einfügen -->
+      
+      </div>
       <script>
-         var marker = L.marker([51.76148,6.39604]).addTo(Karte);
+         var marker = L.marker([52.70806,9.25532]).addTo(Karte);
+         var marker_2 = L.marker([52.708004,9.25530]).addTo(Karte);
       </script>
    </body>
 </html>
